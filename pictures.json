@@ -1,0 +1,15 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "title": "My album",
+      "pictures": [
+        {
+          "title": "photo 1",
+          "src": "http://placehold.it/250x250"
+        }
+      ]
+    }
+  ]
+
+}
