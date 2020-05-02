@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import pictures from '../../../pictures.json'
+import albumsData from '../db.json'
 
 function MyAlbums() {
-    const [photos] = useState(pictures)
+    const [albums] = useState(albumsData.albums)
     return (
         <div>
             <div className="title">My Albums</div>
-            <div className="body">
-                {photos.map(item => {
-                    return <div>
-                    <Link className="linkBox">
-                        <img src="" alt="picture"/>
-                        <div>Album</div>
-                    </Link>
-                    </div>
-                })}
-                
-            </div>
+                <div className="body">{albums.map(item => {
+                    return <Link className="linkBox" to={`/albums/${item.id}`}>
+                            <img className="picture" src={item.thumb} alt=""></img>
+                            <div className="titleBox">{item.AlbumTitle}</div>
+                        </Link> 
+                      
+            })}</div>
         </div>
-        
+          
+
     )
 }
 
